@@ -1,5 +1,5 @@
 services:
-  bolt:
+  bolt-ai-production:
     image: bolt-ai:production
     build:
       context: .
@@ -33,3 +33,5 @@ services:
     extra_hosts:
       - 'host.docker.internal:host-gateway'
     command: pnpm run dockerstart
+    profiles:
+      - production
