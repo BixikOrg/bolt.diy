@@ -9,11 +9,12 @@ services:
       - '.env'
       - '.env.local'
     environment:
-      - SERVICE_URL_BOLT_3000
+      - SERVICE_URL_BOLT_5173
       - NODE_ENV=production
       - COMPOSE_PROFILES=production
       # No strictly needed but serving as hints for Coolify
-      - PORT=3000
+      - PORT=5173
+      - LMSTUDIO_BASE_URL=${LMSTUDIO_BASE_URL:http://127.0.0.1:1234}
       - GROQ_API_KEY=${GROQ_API_KEY}
       - HuggingFace_API_KEY=${HuggingFace_API_KEY}
       - OPENAI_API_KEY=${OPENAI_API_KEY}
