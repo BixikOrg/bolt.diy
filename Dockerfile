@@ -25,12 +25,6 @@ RUN pnpm install --offline --frozen-lockfile
 # Build the Remix app (SSR + client)
 RUN NODE_OPTIONS=--max-old-space-size=4096 pnpm run build
 
-# Keep only production deps for runtime
-RUN pnpm prune --prod --ignore-scripts
-
-RUN pnpm install @cloudflare/wrangler
-
-
 # ---- runtime stage ----
 FROM node:22-bookworm-slim AS runtime
 WORKDIR /app
