@@ -14,7 +14,7 @@ services:
       - COMPOSE_PROFILES=production
       # No strictly needed but serving as hints for Coolify
       - PORT=5173
-      - LMSTUDIO_BASE_URL=${LMSTUDIO_BASE_URL:http://127.0.0.1:1234}
+      - LMSTUDIO_BASE_URL=${LMSTUDIO_BASE_URL:-http://127.0.0.1:1234}
       - GROQ_API_KEY=${GROQ_API_KEY}
       - HuggingFace_API_KEY=${HuggingFace_API_KEY}
       - OPENAI_API_KEY=${OPENAI_API_KEY}
