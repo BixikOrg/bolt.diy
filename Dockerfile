@@ -89,4 +89,3 @@ ENV GROQ_API_KEY=${GROQ_API_KEY} \
     RUNNING_IN_DOCKER=true
 
 RUN mkdir -p /app/run
-CMD ["pnpm", "run", "dev", "--host"]
