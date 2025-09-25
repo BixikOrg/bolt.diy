@@ -16,6 +16,7 @@ ENV VITE_PUBLIC_APP_URL=${VITE_PUBLIC_APP_URL}
 # Install deps efficiently
 COPY package.json pnpm-lock.yaml* ./
 RUN pnpm fetch
+RUN pnpm install @cloudflare/wrangler
 
 # Copy source and build
 COPY . .
