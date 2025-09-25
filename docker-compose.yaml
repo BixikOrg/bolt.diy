@@ -4,12 +4,12 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-      target: development
+      target: runtime
     env_file: 
       - '.env'
       - '.env.local'
     environment:
-      - SERVICE_URL_bolt_5173
+      - SERVICE_URL_BOLT_5173
       - NODE_ENV=production
       - COMPOSE_PROFILES=production
       # No strictly needed but serving as hints for Coolify
