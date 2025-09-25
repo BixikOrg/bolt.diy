@@ -16,7 +16,6 @@ ENV VITE_PUBLIC_APP_URL=${VITE_PUBLIC_APP_URL}
 # Install deps efficiently
 COPY package.json pnpm-lock.yaml* ./
 RUN pnpm fetch
-RUN pnpm install @cloudflare/wrangler
 
 # Copy source and build
 COPY . .
@@ -28,6 +27,8 @@ RUN NODE_OPTIONS=--max-old-space-size=4096 pnpm run build
 
 # Keep only production deps for runtime
 RUN pnpm prune --prod --ignore-scripts
+
+RUN pnpm install @cloudflare/wrangler
 
 
 # ---- runtime stage ----
